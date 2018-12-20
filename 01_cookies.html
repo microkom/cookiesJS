@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Cookies</title>
+
+		<!--
+Haz una Web que almacene en una cookie el número de visitas que has realizado, incrementado el valor del número de visitas a cada visita realizada. La web debe tener una interfaz para visualizar el contenido de la cookie y para eliminar la cookie. COMPLETA EL CÓDIGO
+-->
+	</head>
+	<body>
+
+
+		VISITAS A ESTA PAGINA : <div id="divVisitas"></div>
+		<form>
+			<input type="button" value="Eliminar cookie" id="botonEliminar">
+		</form>
+
+		<script>
+			
+			var cont =0;
+			// Codigo al cargarse la pagina para obtener la cookie
+			
+			window.onload=function (){
+				//console.log(document.cookie);
+				if(document.cookie.length != 0){
+					var cookieName = document.cookie.split("=");
+					cont= cookieName[1];
+					cont++;
+					console.log("cont "+cont);
+				}
+			}
+			
+			
+			if(cont <= 0)
+				cont=0;
+			
+			document.cookie = "visita="+cont+";expires="+Date.now();
+			console.log("visita="+cont+";expires="+now.toUTCString());
+			cont++;
+			console.log(cont);
+			/*		
+			miCookie=(parseInt(miCookie)+1).toString();
+			setCookie("visitas",miCookie);
+			document.getElementById("divVisitas").innerHTML=miCookie;
+
+
+
+			document.cookie = "visita="+cont+";expires="+now.toUTCString();
+
+			//Funciones COOKIES
+			function setCookie(cname, cvalue, exdays) {
+
+			}
+			function getCookie(cname) {
+			}
+			function deleteCookie(cname) {
+			}
+			// Funcion para eliminar nuestra Cookie
+			function eliminarCookie(){
+			}
+*/
+		</script>
+
+	</body>
+</html>
